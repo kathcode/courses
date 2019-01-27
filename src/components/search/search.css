@@ -1,0 +1,9 @@
+.input-group input {
+  border: none;
+  height: 50px;
+}
+
+.input-group .input-group-text {
+  border: none;
+  background-color: #ffffff;
+}
