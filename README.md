@@ -2,8 +2,8 @@
 
 Install the dependencies
 
-### `yarn install`
+### `$ yarn install`
 
 Run the project
 
-### `yarn start`
+### `$ yarn start`
