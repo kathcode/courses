@@ -49,7 +49,17 @@ class Pagination extends PureComponent {
 }
 
 Pagination.propTypes = {
-
+  handleGoToNextPage: PropTypes.func,
+  handleGoToPreviousPage: PropTypes.func,
+  pageIndex: PropTypes.number,
+  totalItems: PropTypes.number,
 };
+
+Pagination.defaultProps = {
+  handleGoToNextPage: () => {},
+  handleGoToPreviousPage: () => {},
+  pageIndex: null,
+  totalItems: null,
+}
 
 export default Pagination;
