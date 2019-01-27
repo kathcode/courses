@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
-import debounde from 'lodash';
 
 import coursesAPI from './api/courses';
 
@@ -55,12 +54,22 @@ class App extends Component {
     this.setState({ topCourses });
   }
 
+  /**
+   * Make a request to find the courses with the text search.
+   *
+   * @memberof App
+   */
   searchCourse = (text) => {
-    debugger
     const searchText = text.target.value;
     this.setState({ searchText }, () => this.getAllCourses());
   };
 
+  /**
+   * Make a request to get the list of courses with the new index page.
+   * Increased the pageIndex so that it brings the data of the next page
+   *
+   * @memberof App
+   */
   handleGoToNextPage = () => {
     this.setState((state) => {
       return {
@@ -70,6 +79,12 @@ class App extends Component {
     }, () => this.getAllCourses());
   }
 
+  /**
+   * Make a request to get the list of courses with the new index page.
+   * A page is subtracted to bring the data from the previous page
+   *
+   * @memberof App
+   */
   handleGoToPreviousPage = () => {
     this.setState((state) => {
       return {
